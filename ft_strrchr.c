@@ -14,14 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
+	char	*ptr;
 
-	len = ft_strlen(s);
-	while (len >= 0)
+	ptr = 0;
+	while (*s)
 	{
-		if (s[len] == c)
-			return ((char *)(s + len));
-		len--;
+		if (*s == (char)c)
+			ptr = (char *)s;
+		s++;
 	}
-	return (NULL);
+	if ((char)c == 0)
+		ptr = (char *)s;
+	return (ptr);
 }
