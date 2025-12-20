@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   .test_program.c                                    :+:      :+:    :+:   */
+/*   .test_funciones.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 18:27:18 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/19 21:20:03 by foehler          ###   ########.fr       */
+/*   Updated: 2025/12/20 13:25:35 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+// Función para probar strmapi
+// Hay que usar i de alguna forma para que no de un warning...
+char    f_strmapi(unsigned int i, char c) { c = i + c - i; return c - 32; }
+
+// Función para probar striteri
+void    f_striteri(unsigned int i, char *c) { *c = *c - i + i - 32; }
 
 int	main(void)
 {
@@ -170,6 +177,51 @@ int	main(void)
     else
         printf("ft_split fallo\n");
 
+    // Test itoa
+    int n = 0;
+    char *itoa = ft_itoa(n);
+    if (itoa)
+    {
+        printf("ft_itoa(0): %s\n", itoa);
+        free(itoa);
+    }
+    else
+        printf("ft_itoa fallo\n");
+
+    // Test strmapi
+    char *res = ft_strmapi("abc", f_strmapi);
+    if (res)
+    {
+        printf("ft_strmapi(\"abc\", f_strmapi): %s\n", res);
+        free(res);
+    }
+    else
+        printf("ft_strmapi fallo\n");
+
+    // Test striteri
+    char str[] = "abc";
+    ft_striteri(str, f_striteri);
+    printf("ft_striteri(\"abc\", f_striteri): %s\n", str);
+
+    // Test putchar_fd
+    printf("ft_putchar_fd('a', 1): ");
+    ft_putchar_fd('a', 1);
+    printf("\n");
+
+    // Test putstr_fd
+    printf("ft_putstr_fd(str, 1): ");
+    ft_putstr_fd(str, 1);
+    printf("\n");
+
+    // Test putendl_fd
+    printf("ft_putendl_fd(str, 1): ");
+    ft_putendl_fd(str, 1);
+    printf("\n");
+
+    // Test putnbr_fd
+    printf("ft_putnbr_fd(-42, 1): ");
+    ft_putnbr_fd(-42, 1);
+    printf("\n");
 
     return (0);
 }

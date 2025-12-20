@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 17:31:54 by foehler-          #+#    #+#             */
-/*   Updated: 2025/12/20 13:08:31 by foehler          ###   ########.fr       */
+/*   Created: 2025/12/20 14:03:52 by foehler           #+#    #+#             */
+/*   Updated: 2025/12/20 14:06:41 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	const char	*ptr;
+	int	size;
+	int	i;
 
-	ptr = NULL;
-	while (*s != '\0')
+	size = ft_lstsize(lst);
+	i = 0;
+	while (i < size - 1)
 	{
-		if (*s == (char)c)
-			ptr = s;
-		s++;
+		lst = lst->next;
+		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)s);
-	return ((char *)ptr);
+	return (lst);
 }

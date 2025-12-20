@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 16:31:08 by foehler-          #+#    #+#             */
-/*   Updated: 2025/12/20 13:46:27 by foehler          ###   ########.fr       */
+/*   Created: 2025/12/20 15:06:18 by foehler           #+#    #+#             */
+/*   Updated: 2025/12/20 17:10:47 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned char		*temp_dest;
-	const unsigned char	*temp_src;
-	size_t				i;
+	t_list	*new_list;
+	t_list	*new_node;
+	void	*content_aux;
 
-	if (dest == NULL && src == NULL)
+	if (lst == NULL || f == NULL || del == NULL)
 		return (NULL);
-	temp_dest = (unsigned char *)dest;
-	temp_src = (const unsigned char *)src;
-	i = 0;
-	if (temp_dest < temp_src)
+	new_list = NULL;
+	while (lst != NULL)
 	{
-		while (i < n)
+		content_aux = f(lst->content);
+		new_node = ft_lstnew(content_aux);
+		if (new_node == NULL)
 		{
-			temp_dest[i] = temp_src[i];
-			i++;
+			del(content_aux);
+			ft_lstclear(&new_list, del);
+			return (new_list);
 		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	else
-		while (n-- > 0)
-			temp_dest[n] = temp_src[n];
-	return (dest);
+	return (new_list);
 }
