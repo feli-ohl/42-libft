@@ -6,12 +6,29 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 13:26:37 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/20 17:06:26 by foehler          ###   ########.fr       */
+/*   Updated: 2025/12/22 11:51:43 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+// Función utilizada para imprimir por pantalla listas cuyos nodos tienen 
+// strings por contenido
+void	print_linked_list(t_list *list)
+{
+	int	i;
+
+	i = 1;
+	printf("\n--- Estado actual de la lista ---\n");
+	while (list != NULL)
+	{
+		printf("Node %d: %s\n", i, (char *)list->content);
+		i++;
+		list = list->next;
+	}
+	printf("Node %d: NULL\n\n", i);
+}
 
 // Función 'del' simulada para no crashear con strings 
 // Usada para probar ft_lstdelone
@@ -57,23 +74,29 @@ int	main(void)
 	t_list	*mi_nodo3;
 
 	printf("\n===== TEST FT_LSTNEW =====\n");
+	print_linked_list(lista);
 	// Vamos a empezar creando el nodo 2 para probar add_front después
 	mi_nodo2 = ft_lstnew("Contenido 2");
 	if (!mi_nodo2)
 		return (1);
+	else
+		printf("Creando nodo 2...\n");
 	// Lo asignamos como inicio de lista manual
 	lista = mi_nodo2;
-	printf("Lista actual: %s -> NULL\n", (char *)lista->content);
+	printf("Añadiendo nodo 2 a la lista...\n");
+	print_linked_list(lista);
 
 
 	printf("\n===== TEST FT_LSTADD_FRONT =====\n");
 	mi_nodo1 = ft_lstnew("Contenido 1");
 	if (!mi_nodo1)
 		return (1);
+	else
+		printf("Creando nodo 1...\n");
 	// Pasamos la dirección de 'lista'. Ahora el 1 se pondrá antes del 2.
 	ft_lstadd_front(&lista, mi_nodo1);
-	printf("Primero: %s\n", (char *)lista->content);       // Debe ser Contenido 1
-	printf("Segundo: %s\n", (char *)lista->next->content); // Debe ser Contenido 2
+	printf("Añadiendo nodo 1 al principio de la lista...\n");
+	print_linked_list(lista);
 		
 
 	printf("\n===== TEST FT_LSTSIZE =====\n");
@@ -89,11 +112,12 @@ int	main(void)
 	mi_nodo3 = ft_lstnew("Contenido 3");
 	if (!mi_nodo3)
 		return (1);
+	else
+		printf("Creando nodo 3...\n");
 	// Pasamos la dirección de 'lista'. La función recorrerá hasta el final y pegará el 3.
 	ft_lstadd_back(&lista, mi_nodo3);
-	if (mi_nodo2->next == mi_nodo3) // nodo2 era el último antes, ahora debe apuntar al 3
-		printf("El nodo 2 ahora apunta al nodo 3: Correcto\n");
-	printf("Nuevo último: %s\n", (char *)mi_nodo3->content);
+	printf("Añadiendo nodo 3 al final de la lista...\n");
+	print_linked_list(lista);
 
 
 	printf("\n===== TEST FT_LSTDELONE =====\n");
@@ -103,9 +127,7 @@ int	main(void)
 	mi_nodo1->next = mi_nodo3;
 	printf("Borrando nodo 2...\n");
 	ft_lstdelone(mi_nodo2, del_mock);
-	printf("Estado final de la lista:\n");
-	printf("1: %s\n", (char *)lista->content);
-	printf("2: %s\n", (char *)lista->next->content); // Ahora el siguiente del 1 es el 3
+	print_linked_list(lista);
 
 
 	printf("\n===== TEST FT_LSTCLEAR =====\n");
@@ -113,7 +135,7 @@ int	main(void)
 	// Pasamos la dirección de 'lista' (&lista)
 	ft_lstclear(&lista, del_mock);
 	if (lista == NULL)
-		printf("¡Éxito! La lista ahora es NULL.\n");
+		print_linked_list(lista);
 	else
 		printf("Error: La lista no es NULL.\n");
 
@@ -129,24 +151,15 @@ int	main(void)
 	ft_lstadd_front(&lista, ft_lstnew(str2));
 	ft_lstadd_front(&lista, ft_lstnew(str3));
 	printf("--- Antes de iterar ---\n");
-	t_list *temp = lista;
-	while (temp)
-	{
-		printf("Nodo: %s\n", (char *)temp->content);
-		temp = temp->next;
-	}
+	print_linked_list(lista);
 	ft_lstiter(lista, f_modify_mock);
 	printf("--- Después de iterar ---\n");
-	temp = lista;
-	while (temp)
-	{
-		printf("Nodo: %s\n", (char *)temp->content);
-		temp = temp->next;
-	}
+	print_linked_list(lista);
 
 	
 	printf("\n===== TEST FT_LSTMAP =====\n");
 	t_list *lista2 = ft_lstnew(ft_strdup("hola")); // Lista original
+	print_linked_list(lista2);
 	t_list *mapa;
 	if (!lista2) 
 		return (1);
@@ -162,9 +175,9 @@ int	main(void)
 	}
 	else
 		printf("Error: ft_lstmap devolvió NULL.\n");
-	// Limpieza
 	ft_lstclear(&lista2, map_del);
 	ft_lstclear(&mapa, map_del);
+	printf("Borrando ambas listas...\n");
 
 	return (0);
 }
