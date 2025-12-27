@@ -27,8 +27,22 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -f test_funciones.c test_listas.c runner_func runner_list
 	@echo "LIBRERÍA $(NAME) ELIMINADA"
 
 re: fclean all
 
-.PHONY: all clean fclean re
+URL_FUNC = https://raw.githubusercontent.com/feli-ohl/Libft/refs/heads/main/TESTS/test_funciones.c
+URL_LIST = https://raw.githubusercontent.com/feli-ohl/Libft/refs/heads/main/TESTS/test_listas.c
+
+test: all
+	@echo "Descargando tests desde GitHub..."
+	@curl -s -O $(URL_FUNC)
+	@curl -s -O $(URL_LIST)
+	@echo "Compilando..."
+	@$(CC) $(CFLAGS) test_funciones.c -L. -lft -o runner_func
+	@$(CC) $(CFLAGS) test_listas.c -L. -lft -o runner_list
+	@echo "Archivos ejecutables runner_func y runner_list creados correctamente."
+	@echo "Para borrar los archivos de tests y los ejecutables, ejecutar 'make fclean'."
+
+.PHONY: all clean fclean re test
