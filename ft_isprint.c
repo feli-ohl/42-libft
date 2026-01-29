@@ -17,3 +17,4 @@ int	ft_isprint(int c)
 	else
 		return (0);
 }
+
