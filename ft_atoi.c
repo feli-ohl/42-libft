@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: foehler- <foehler-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 13:15:25 by foehler-          #+#    #+#             */
-/*   Updated: 2025/12/19 13:34:20 by foehler-         ###   ########.fr       */
+/*   Updated: 2026/01/29 17:55:28 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (number * sign);
 }
-

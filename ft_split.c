@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 20:40:55 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/19 21:14:18 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:56:44 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (split);
 }
-

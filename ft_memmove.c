@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:31:08 by foehler-          #+#    #+#             */
-/*   Updated: 2025/12/22 11:33:13 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:56:26 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return (dest);
 }
-

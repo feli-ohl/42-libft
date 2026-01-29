@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: foehler- <foehler-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 17:03:03 by foehler-          #+#    #+#             */
-/*   Updated: 2025/11/21 17:23:01 by foehler-         ###   ########.fr       */
+/*   Updated: 2026/01/29 17:57:01 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i + dst_len] = '\0';
 	return (dst_len + src_len);
 }
-

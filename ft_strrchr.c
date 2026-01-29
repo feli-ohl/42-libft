@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 17:31:54 by foehler-          #+#    #+#             */
-/*   Updated: 2025/12/20 19:29:23 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:57:18 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s);
 	return ((char *)ptr);
 }
-

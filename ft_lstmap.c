@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 15:06:18 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/20 17:10:47 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:56:09 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
-

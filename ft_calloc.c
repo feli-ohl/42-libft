@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 17:51:19 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/19 18:10:34 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:55:32 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(pointer, total_size);
 	return (pointer);
 }
-

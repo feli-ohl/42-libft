@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 18:06:32 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/19 18:22:44 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:56:51 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ char	*ft_strdup(const char *s1)
 	ft_memcpy(pointer, s1, len);
 	return (pointer);
 }
-

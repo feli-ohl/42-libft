@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 19:46:30 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/19 19:59:30 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:56:58 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	pointer[i] = '\0';
 	return (pointer);
 }
-

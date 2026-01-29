@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 20:03:52 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/19 20:34:35 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:57:21 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trim = ft_substr(s1, inicio, final - inicio);
 	return (trim);
 }
-

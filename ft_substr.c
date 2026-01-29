@@ -6,7 +6,7 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 19:09:15 by foehler           #+#    #+#             */
-/*   Updated: 2025/12/19 19:44:28 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 17:57:23 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(pointer, s + start, len + 1);
 	return (pointer);
 }
-
