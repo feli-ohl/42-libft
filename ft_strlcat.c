@@ -6,12 +6,20 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 17:03:03 by foehler-          #+#    #+#             */
-/*   Updated: 2026/01/29 17:57:01 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Concatenates strings with size limit.
+ * 
+ * @param dst The destination buffer.
+ * @param src The source string to append.
+ * @param size Size of the destination buffer.
+ * @return The total length of the string it tried to create.
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_len;

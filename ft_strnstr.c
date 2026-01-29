@@ -6,12 +6,20 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:52:43 by foehler-          #+#    #+#             */
-/*   Updated: 2026/01/29 17:57:16 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Locates a substring in a string with length limit.
+ * 
+ * @param big The string to search in.
+ * @param little The substring to find.
+ * @param len Maximum number of characters to search.
+ * @return Pointer to the beginning of the substring, or NULL if not found.
+ */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

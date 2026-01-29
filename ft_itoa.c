@@ -6,12 +6,18 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 11:23:48 by foehler           #+#    #+#             */
-/*   Updated: 2026/01/29 17:55:51 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Counts the number of digits in an integer.
+ * 
+ * @param n The integer to count.
+ * @return The number of digits including sign.
+ */
 static size_t	ft_count_digits(int n)
 {
 	size_t	digits;
@@ -29,6 +35,12 @@ static size_t	ft_count_digits(int n)
 	return (digits);
 }
 
+/**
+ * @brief Converts an integer to a string.
+ * 
+ * @param n The integer to convert.
+ * @return The newly allocated string representation, or NULL on failure.
+ */
 char	*ft_itoa(int n)
 {
 	char	*str;

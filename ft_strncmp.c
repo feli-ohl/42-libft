@@ -6,12 +6,20 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:10:33 by foehler-          #+#    #+#             */
-/*   Updated: 2026/01/29 17:57:13 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compares two strings up to n characters.
+ * 
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @param n Maximum number of characters to compare.
+ * @return Difference between the first differing characters, or 0 if equal.
+ */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

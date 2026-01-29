@@ -6,12 +6,20 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:39:28 by foehler-          #+#    #+#             */
-/*   Updated: 2026/01/29 17:56:19 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compares two memory areas.
+ * 
+ * @param s1 Pointer to the first memory area.
+ * @param s2 Pointer to the second memory area.
+ * @param n Number of bytes to compare.
+ * @return Difference between the first differing bytes, or 0 if equal.
+ */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;

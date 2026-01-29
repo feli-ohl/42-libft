@@ -6,12 +6,18 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 12:52:40 by foehler           #+#    #+#             */
-/*   Updated: 2026/01/29 17:56:36 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Outputs an integer to a file descriptor.
+ * 
+ * @param n The integer to output.
+ * @param fd The file descriptor.
+ */
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

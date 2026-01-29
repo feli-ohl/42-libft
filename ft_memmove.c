@@ -6,12 +6,20 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:31:08 by foehler-          #+#    #+#             */
-/*   Updated: 2026/01/29 17:56:26 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copies memory area with overlap handling.
+ * 
+ * @param dest Pointer to the destination.
+ * @param src Pointer to the source.
+ * @param n Number of bytes to copy.
+ * @return Pointer to dest.
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*temp_dest;

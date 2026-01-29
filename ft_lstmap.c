@@ -6,12 +6,20 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 15:06:18 by foehler           #+#    #+#             */
-/*   Updated: 2026/01/29 17:56:09 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Creates a new list by applying a function to each node.
+ * 
+ * @param lst The beginning of the list.
+ * @param f The function to apply to each node's content.
+ * @param del The function to delete content if needed.
+ * @return The new list, or NULL on failure.
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;

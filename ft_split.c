@@ -6,12 +6,19 @@
 /*   By: foehler <foehler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 20:40:55 by foehler           #+#    #+#             */
-/*   Updated: 2026/01/29 17:56:44 by foehler          ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:54 by foehler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Counts words in a string separated by a delimiter.
+ * 
+ * @param s The string to process.
+ * @param c The delimiter character.
+ * @return The number of words.
+ */
 static size_t	ft_count_words(const char *s, char c)
 {
 	size_t	count;
@@ -33,6 +40,12 @@ static size_t	ft_count_words(const char *s, char c)
 	return (count);
 }
 
+/**
+ * @brief Frees an array of strings.
+ * 
+ * @param array The array to free.
+ * @param i The number of elements to free.
+ */
 static void	ft_free_array(char **array, size_t i)
 {
 	while (i > 0)
@@ -43,6 +56,13 @@ static void	ft_free_array(char **array, size_t i)
 	free(array);
 }
 
+/**
+ * @brief Calculates the length of a word until delimiter.
+ * 
+ * @param s The string to process.
+ * @param c The delimiter character.
+ * @return The length of the word.
+ */
 static size_t	ft_wordlen(char const *s, char c)
 {
 	size_t	len;
@@ -53,6 +73,14 @@ static size_t	ft_wordlen(char const *s, char c)
 	return (len);
 }
 
+/**
+ * @brief Fills the array with split words.
+ * 
+ * @param split The array to fill.
+ * @param s The string to split.
+ * @param c The delimiter character.
+ * @return The filled array, or NULL on failure.
+ */
 static char	**ft_fill_array(char **split, char const *s, char c)
 {
 	size_t	i;
@@ -80,6 +108,13 @@ static char	**ft_fill_array(char **split, char const *s, char c)
 	return (split);
 }
 
+/**
+ * @brief Splits a string into an array of words.
+ * 
+ * @param s The string to split.
+ * @param c The delimiter character.
+ * @return Array of strings, or NULL on failure.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
